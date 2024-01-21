@@ -52,8 +52,6 @@ def _setup_entities(devices, async_add_entities, coordinator):
             entities.append(VeSyncHumidifierAutoOnHA(dev, coordinator))
         if getattr(dev, "automatic_stop_on", None):
             entities.append(VeSyncHumidifierAutomaticStopHA(dev, coordinator))
-        if getattr(dev, "turn_on_display", None):
-            entities.append(VeSyncHumidifierDisplayHA(dev, coordinator))
         if getattr(dev, "child_lock_on", None):
             entities.append(VeSyncFanChildLockHA(dev, coordinator))
 
